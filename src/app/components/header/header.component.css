@@ -1,0 +1,46 @@
+nav {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 4px 16px;
+  background: #e91e63;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  color: #ffffff;
+  height: 56px;
+}
+
+button {
+  margin-right: 5px;
+}
+
+span {
+  display: flex;
+  align-items: center;
+
+}
+
+fa-icon {
+  color: #ffffff;
+  margin-right: 5px;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+span {
+  color: #ffffff;
+}
+
+@media (max-width:600px) {
+  nav {
+    justify-content: center;
+  }
+}

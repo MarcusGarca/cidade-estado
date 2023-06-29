@@ -1,0 +1,27 @@
+<nav class="mat-elevation-z6">
+  <a
+    mat-button
+    href="https://github.com/MarcusGarca/cidade-estado"
+    target="_blank"
+  >
+    <span><fa-icon [icon]="faGithub" size="2x"></fa-icon>GitHub</span></a
+  >
+
+  <button mat-button [matMenuTriggerFor]="afterMenu">
+    <span><fa-icon [icon]="faGlobe" size="2x"></fa-icon>Conheça a API</span>
+  </button>
+  <mat-menu #afterMenu="matMenu" xPosition="after">
+    <a
+      mat-menu-item
+      href="https://servicodados.ibge.gov.br/api/docs/localidades#api-UFs"
+      target="_blank"
+      >UF</a
+    >
+    <a
+      mat-menu-item
+      href="https://servicodados.ibge.gov.br/api/docs/localidades#api-Municipios-estadosUFMunicipiosGet"
+      target="_blank"
+      >Cidades</a
+    >
+  </mat-menu>
+</nav>

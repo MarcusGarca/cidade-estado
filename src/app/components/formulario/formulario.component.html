@@ -1,0 +1,55 @@
+<div class="container">
+  <form
+    [formGroup]="formulario"
+    #form="ngForm"
+    (ngSubmit)="mensagemSucessoEnvioFormulario()"
+  >
+    <div class="form-fields">
+      <mat-form-field>
+        <mat-select
+          #estadoSelecionado
+          for="estado"
+          id="estado"
+          name="estado"
+          formControlName="estado"
+          required
+          (selectionChange)="listaCidades()"
+        >
+          <mat-option *ngFor="let i of estados" [value]="i.sigla">{{
+            i.nome
+          }}</mat-option>
+        </mat-select>
+        <mat-label
+          ><mat-icon>south_america</mat-icon> <strong> Estados</strong>
+        </mat-label>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-select
+          for="cidade"
+          id="cidade"
+          name="cidade"
+          formControlName="cidade"
+          required
+        >
+          <mat-option *ngFor="let i of cidades" [value]="i.nome">{{
+            i.nome
+          }}</mat-option>
+        </mat-select>
+        <mat-label
+          ><mat-icon>south_america</mat-icon> <strong> Cidades</strong>
+        </mat-label>
+      </mat-form-field>
+    </div>
+    <div class="btn-submit">
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="!formulario.valid || disabled"
+      >
+        <span>Enviar</span>
+      </button>
+    </div>
+  </form>
+</div>
