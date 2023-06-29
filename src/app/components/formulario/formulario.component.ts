@@ -22,10 +22,8 @@ export class FormularioComponent implements OnInit {
   uf!: string;
   cidades!: CidadeEstado[];
 
-  disabled: boolean = false;
   snackBar = inject(MatSnackBar);
   constructor(
-    private formBuilder: FormBuilder,
     private ibgeService: IbgeService,
   ) {
     this.cadastro = {} as Cadastro
@@ -67,7 +65,7 @@ export class FormularioComponent implements OnInit {
     );
   }
 
-  mensagemSucessoEnvioFormulario() {
+  public mensagemSucessoEnvioFormulario(): void {
     this.snackBar.open(this.estado.value + ' - ' + this.cidade.value, 'OK', {
       duration: 5000,
       horizontalPosition: 'end',
